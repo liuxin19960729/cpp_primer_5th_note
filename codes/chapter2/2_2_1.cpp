@@ -2,16 +2,19 @@
 
 std::string global_str; //""
 int global_int;         // 0
+int c = 200;
 int main(int argc, char const *argv[])
 {
 
     std::string local_str; //"" 由于string含有默认初始化
-    int local_int;        //系统分配数据值
+    int local_int;         //系统分配数据值
 
     std::cout << "global_str: " << global_str << std::endl;
     std::cout << "global_int: " << global_int << std::endl;
     std::cout << "local_str: " << local_str << std::endl;
     std::cout << "local_int: " << local_int << std::endl;
+    extern int c;
+    std::cout << "c: " << c << std::endl;
     return 0;
 }
 
