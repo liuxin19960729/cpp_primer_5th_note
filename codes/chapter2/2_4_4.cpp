@@ -9,7 +9,9 @@ int main(int argc, char const *argv[])
     // int gg=100;
     // rint c=gg;
     
-
+    // const int c=100;
+    // auto p =&c;
+    // std::cout<<*p<<std::endl;
     return 0;
 }
 
