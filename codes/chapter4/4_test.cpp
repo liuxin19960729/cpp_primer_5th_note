@@ -11,7 +11,11 @@ struct CC
 
 int main(int argc, char const *argv[])
 {
-    CC cc;
-    CC &z = cc(100);
+    int c = (5 % (-2));
+    int d = (-5 % 2);
+    int e = (5 % 2);
+    cout << (-5 % (-2)) << endl;
+    cout << (-5 % 2) << endl;
+    cout << 5 % 2 << endl;
     return 0;
 }
