@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <cctype>
 using namespace std;
 struct CC
 {
@@ -9,13 +11,20 @@ struct CC
     }
 };
 
+void c(int (&arr)[3])
+{
+    for (auto v : arr)
+    {
+        cout << v << endl;
+    }
+}
+
 int main(int argc, char const *argv[])
 {
-    int c = (5 % (-2));
-    int d = (-5 % 2);
-    int e = (5 % 2);
-    cout << (-5 % (-2)) << endl;
-    cout << (-5 % 2) << endl;
-    cout << 5 % 2 << endl;
+    // int a[] = {1, 2, 3};
+    // c(a);
+
+
+
     return 0;
 }
