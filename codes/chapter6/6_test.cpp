@@ -15,10 +15,21 @@ void fn(const int (&c)[2][2])
     }
 }
 
+void p(short i)
+{
+    cout <<"short" <<i << endl;
+}
+
+void p(int i)
+{
+    cout <<"int " <<i << endl;
+}
+
 int main(int argc, char const *argv[])
 {
-    int aa[2][2] = {{1}, {2}};
-    fn(aa);
+    p(1);
+    short c=1;
+    p(c);
     return 0;
 }
 
