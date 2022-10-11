@@ -17,19 +17,29 @@ void fn(const int (&c)[2][2])
 
 void p(short i)
 {
-    cout <<"short" <<i << endl;
+    cout << "short" << i << endl;
 }
 
 void p(int i)
 {
-    cout <<"int " <<i << endl;
+    cout << "int " << i << endl;
 }
 
+void zzc(const int &i)
+{
+    cout << "zzc(const int &i)" << i << endl;
+}
+void zzc(int &i)
+{
+    cout << "zzc(int &i)" << i << endl;
+}
 int main(int argc, char const *argv[])
 {
-    p(1);
-    short c=1;
-    p(c);
+    const int i = 100;
+    int j = 200;
+    zzc(i);
+    zzc(j);
+    zzc(200);
     return 0;
 }
 
