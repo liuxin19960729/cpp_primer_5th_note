@@ -194,5 +194,51 @@ note:当一个文件已经打开,在次open()回失败 并且 faildbit 位会被
 
 ### 8.2.2 文件模式
 ```
+in 读
+out 写
+app   append 每次操作前定位到文件末尾
+ate 定位到文件末尾
+trunc 阶段文件
+binary 以二进制方式进行io
+
+ofstream fstream    out模式
+
+ifstream fstream     in模式
+
+out 模式才能trunc
+
+app 只有在 out模块并且trunc没有被设置才能使用
+
+ate 和 binary 可以对应任何类型的文件流对象,并且可以和其他文件流对象组合
+
+文件流对象的默认模式
+fstream in out
+ifstream in
+ofstream out
+```
+#### out模式下打开文件会丢失已经有的数据
+```
+ofstream out(file) 默认out 丢失数据(ofstream out(file,ofstream::out)
+
+隐含截断文件
+ofstream out(file,ofstream::out|ofstream::trunc)
+//append模式
+ofstream out(file,ofstream::app);//默认指定 out
+ofstream out(file,ofstream::app|ofstream::out)
+```
+#### 每次调用open时都可以设定文件模式
+```
+out.open(file,mode)
+
+out 
+   隐式着同时是 trunc
+out app or app 意味着保留文件内容从末尾开始写数据
+```
+
+#### 8.2.2 练习
+[code](./codes/chapter8/8_2_2.cpp)
+
+## 8.3 string 流
+```
 
 ```
