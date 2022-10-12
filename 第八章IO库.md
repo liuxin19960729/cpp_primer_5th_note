@@ -239,6 +239,30 @@ out app or app 意味着保留文件内容从末尾开始写数据
 [code](./codes/chapter8/8_2_2.cpp)
 
 ## 8.3 string 流
+```cpp
+#include<sstream>
+
+istringstream string 读取数据
+ostringstream string 写入数据
+stringstream 读写数据
+
+
+所欲类型都继承iostream 对象
+
+stringstream 流特有的操作
+stringstream strm;未绑定的stringstream流
+
+stringstream strm(s); 保存一个string类型的拷贝 stringstream 构造是explicit
+
+strm.str()返回string的拷贝
+strm.str(s) 将string 拷贝到流里面
 ```
+### 8.3.1 使用istringstream流
+```
+istringstream 处理一行内的单个单词可以用到该流
 
 ```
+#### 8.3.1 练习
+[code](./codes/chapter8/8_3_1.cpp)
+
+### 8.3.2 使用ostringstream

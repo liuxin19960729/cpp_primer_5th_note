@@ -5,6 +5,7 @@
 #include <cstring>
 #include <cstdlib>
 #include <cassert>
+#include <sstream>
 using namespace std;
 
 class Info
