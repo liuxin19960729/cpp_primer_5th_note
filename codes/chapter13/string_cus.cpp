@@ -17,7 +17,7 @@ public:
     char *begin() const { return element; }
     char *end() const { return element ? eof : nullptr; }
     size_t size() const { return element ? eof - element : 0; }
-    char *c_str() { return element; }
+    const char *c_str() const { return element; }
     ~string_cus();
 
     string_cus &operator=(const string_cus &);
@@ -111,9 +111,9 @@ void string_cus::push_back(const char &ch)
 char *string_cus::insert(char *iter, const char &ch)
 {
     chk_alloc();
-    auto rend = eof + 1;   
+    auto rend = eof + 1;
     auto lend = eof++;
-    while (iter <= lend)      
+    while (iter <= lend)
     {
         *rend-- = *lend--;
     }
@@ -128,6 +128,5 @@ int main(int argc, char const *argv[])
     a.insert(a.begin(), 'r');
     a.insert(a.begin(), 'r');
     cout << a.c_str() << endl;
-
     return 0;
 }
