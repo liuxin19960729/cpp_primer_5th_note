@@ -10,7 +10,7 @@ private:
     double discount = 0.0;
 
 public:
-    Bulk_quote(/* args */) = default;
+    Bulk_quote(/* args */);
     virtual double net_price(std::size_t) const override;
     ~Bulk_quote();
 };
