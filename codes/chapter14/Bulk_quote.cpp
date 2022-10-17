@@ -13,6 +13,7 @@ public:
     Bulk_quote(/* args */);
     virtual double net_price(std::size_t) const override;
     ~Bulk_quote();
+
 };
 
 Bulk_quote::Bulk_quote(/* args */)
