@@ -35,7 +35,10 @@ private:
     ssize_t step = 20;
 };
 allocator<char> string_cus::alloc;
-string_cus::string_cus() : cap(nullptr), eof(nullptr), element(nullptr) {}
+string_cus::string_cus() : cap(nullptr), eof(nullptr), element(nullptr)
+{
+    cout << "string_cus 默认构造" << endl;
+}
 string_cus::string_cus(const char *pch)
 {
     const char *end = pch;
@@ -45,6 +48,7 @@ string_cus::string_cus(const char *pch)
     element = data.first;
     cap = eof = data.second;
     *eof = '\0';
+    cout << "char*构造" << endl;
 }
 string_cus::string_cus(const string_cus &ostr)
 {
@@ -53,6 +57,7 @@ string_cus::string_cus(const string_cus &ostr)
     element = data.first;
     cap = eof = data.second;
     *eof = '\0';
+    cout << "string_cus 拷贝构造" << endl;
 }
 string_cus &string_cus::operator=(const string_cus &ostr)
 {
@@ -61,6 +66,7 @@ string_cus &string_cus::operator=(const string_cus &ostr)
     element = data.first;
     cap = eof = data.second;
     *eof = '\0';
+    cout << "string_cus 赋值" << endl;
     return *this;
 }
 string_cus::string_cus(string_cus &&str)
@@ -120,13 +126,13 @@ char *string_cus::insert(char *iter, const char &ch)
     *iter = ch;
     return ++iter;
 }
-int main(int argc, char const *argv[])
-{
-    string_cus a("ssss");
-    a.push_back('g');
-    a.insert(a.begin(), 'c');
-    a.insert(a.begin(), 'r');
-    a.insert(a.begin(), 'r');
-    cout << a.c_str() << endl;
-    return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+//     string_cus a("ssss");
+//     a.push_back('g');
+//     a.insert(a.begin(), 'c');
+//     a.insert(a.begin(), 'r');
+//     a.insert(a.begin(), 'r');
+//     cout << a.c_str() << endl;
+//     return 0;
+// }
