@@ -11,11 +11,14 @@ public:
 template <typename T>
 int AA<T>::a = 100;
 
+template <ssize_t Len>
+void aa(int (&c)[Len])
+{
+    cout << Len << endl;
+}
 int main(int argc, char const *argv[])
 {
-    AA<int>::a = 20;
-    cout << AA<int>::a << endl;
-    AA<double>::a = 30;
-    cout << AA<int>::a << endl;
+    int ar[20] = {};
+    aa(ar);
     return 0;
 }
